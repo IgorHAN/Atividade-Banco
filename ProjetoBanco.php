@@ -20,29 +20,32 @@ do {
 
     switch ($escolha) {
         case 1:
-            $escolha = 1;
             echo "Seu saldo é: $saldo \n";
-            "\n";
+            echo "------------------------\n";
             break;
 
         case 2:
-            $escolha = 2;
             echo "Quanto deseja sacar: \n";
-            $saque = readline();
-            $saldo = $saldo - $saque;
+            $saque = (float) readline();
             if ($saque > $saldo) {
                 echo "Saldo insuficiente \n";
+                echo "------------------------\n";
+            } else{
+                $saldo -= $saque;
+                echo"Saque realizado com sucesso! \n";
+                echo "------------------------\n";
             }
             break;
 
         case 3:
-            $escolha = 3;
             echo "Quanto deseja depositar: \n";
-            $deposito = readline();
+            $deposito = (float) readline();
             if ($deposito > 0) {
                 $saldo = $deposito + $saldo;
+                echo "------------------------\n";
             } else {
                 echo "Insira um numero valido \n";
+                echo "------------------------\n";
             }
 
             break;
